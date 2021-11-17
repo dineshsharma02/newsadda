@@ -7,24 +7,15 @@ export class News extends Component {
     render() {
         return (
             <>
-            <div>
-                This is new Component
-            </div>
-            <div className="row">
-                <div className="col-md-4">
-                <NewsItem/>
-                </div>
-                <div className="col-md-4">
-                <NewsItem/>
-                </div>
-                <div className="col-md-4">
-                <NewsItem/>
-                </div>
-                <div className="col-md-4">
-                <NewsItem/>
-                </div>
-                <div className="col-md-4">
-                <NewsItem/>
+            <div className="container">
+                <div className="row">
+                    
+                    <NewsItem title = "title1" description = "some desc" imageUrl= "www.google.com" newsUrl = "www.cnbc.com" />
+                    <NewsItem title = "title1" description = "some desc" imageUrl= "www.google.com" newsUrl = "www.cnbc.com" />
+                    <NewsItem title = "title1" description = "some desc" imageUrl= "www.google.com" newsUrl = "www.cnbc.com" />
+                    <NewsItem title = "title1" description = "some desc" imageUrl= "www.google.com" newsUrl = "www.cnbc.com" />
+
+
                 </div>
             </div>
 
