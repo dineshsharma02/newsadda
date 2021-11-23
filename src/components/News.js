@@ -80,7 +80,7 @@ export class News extends Component {
        
 
       <>
-        <h1 className="text-center m-4">News-headlines</h1>
+        <h1 className="text-center m-4">News-{this.props.category==="general"?"Headlines":this.props.category}</h1>
         
 
         {this.state.loading?
