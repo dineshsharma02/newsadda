@@ -1,8 +1,22 @@
 import React, { Component } from "react";
 import NewsItem from "./NewsItem";
 import Loader from "./Loader";
+import PropTypes from 'prop-types'
+
 
 export class News extends Component {
+
+  static defaultProps = {
+    country:"in",
+    pageSize:5,
+    category:"general",
+  }
+
+  static propTypes = {
+    country:PropTypes.string,
+    pageSize:PropTypes.number,
+    category:PropTypes.string,
+  }
   
   constructor(){
       super()
@@ -15,7 +29,7 @@ export class News extends Component {
   }
 
   async componentDidMount(){
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=9198e2aa6870486c80107b57f2bea0d2&page=
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9198e2aa6870486c80107b57f2bea0d2&page=
       ${this.state.page}&pagesize=${this.props.pageSize}`;
     this.setState({loading:true})
     let data = await fetch(url);
@@ -28,7 +42,7 @@ export class News extends Component {
 
   goToPrevious= async()=>{
     
-    let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=9198e2aa6870486c80107b57f2bea0d2&page=
+    let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9198e2aa6870486c80107b57f2bea0d2&page=
       ${this.state.page-1}&pagesize=${this.props.pageSize}`;
     this.setState({loading:true})
     let data = await fetch(url);
@@ -45,7 +59,7 @@ export class News extends Component {
   goToNext=async()=>{
     
     
-      let url = `https://newsapi.org/v2/top-headlines?country=in&apiKey=9198e2aa6870486c80107b57f2bea0d2&page=
+      let url = `https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=9198e2aa6870486c80107b57f2bea0d2&page=
         ${this.state.page+1}&pagesize=${this.props.pageSize}`;
       this.setState({loading:true})
       let data = await fetch(url);
@@ -66,7 +80,7 @@ export class News extends Component {
        
 
       <>
-        <h1 className="text-center">News-headlines</h1>
+        <h1 className="text-center m-4">News-headlines</h1>
         
 
         {this.state.loading?

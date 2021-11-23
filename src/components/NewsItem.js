@@ -8,7 +8,7 @@ export default class NewsItem extends Component {
 
             <div className="col-md-4">
                  
-            <div className="card m-2" style={{width: "18rem"}}>
+            <div className="card m-2" >
                 <img className="card-img-top" src={imageUrl?imageUrl:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfTftcosmlVzliw9GOVXJs8cbcUXt6pmQZbQ&usqp=CAU"} alt="Img not found"/>
                 <div className="card-body">
                     <h5 className="card-title">{title?title.slice(0,88):""}</h5>
