@@ -103,6 +103,9 @@ export class News extends Component {
             description={element.description}
             imageUrl={element.urlToImage}
             newsUrl={element.url}
+            author = {element.author}
+            publishedAt = {element.publishedAt}
+            
           />
         })}
 
@@ -110,7 +113,7 @@ export class News extends Component {
       </div>
     </div>
 
-      <div class="container d-flex justify-content-between my-1">
+      <div className="container d-flex justify-content-between my-1">
       <button onClick={this.goToPrevious} disabled={this.state.page<=1?true:false} className="btn btn-dark">&#8592;previous</button>
       <button onClick={this.goToNext} disabled = {this.state.page+1>Math.ceil(this.state.totalResults/this.props.pageSize)} className="btn btn-dark">Next&#8594;</button>
       </div>
