@@ -40,9 +40,10 @@ const News =(props)=> {
 
 const fetchMoreData = async() =>{
   // this.setState({page: })
-  setPage(page+1)
+  
   const url = `https://newsapi.org/v2/top-headlines?country=${props.country}&category=${props.category}&apiKey=${props.apiKey}&page=
-      ${page}&pagesize=${props.pageSize}`;
+      ${page+1}&pagesize=${props.pageSize}`;
+  setPage(page+1)
   setLoading(true)
   let data = await fetch(url)
   let parsedData = await data.json()
@@ -60,7 +61,7 @@ const fetchMoreData = async() =>{
        
 
       <>
-        <h1 className="text-center m-4">News-{props.category==="general"?"Headlines":props.category}</h1>
+        <h1 className="text-center" style={{ marginTop:'60px' }}>News-{props.category==="general"?"Headlines":props.category}</h1>
         {loading===true && <Loader/>}
 
         
