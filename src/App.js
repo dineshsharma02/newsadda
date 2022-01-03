@@ -29,6 +29,7 @@ export default class App extends Component {
 
 
           <Routes>
+            
             <Route path="/"  element={<News setProgress={this.setProgress} key="General" pageSize={9} country="in" apiKey = {this.apiKey}  />}/>
               
             
